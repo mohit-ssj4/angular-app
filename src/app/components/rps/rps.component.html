@@ -1,0 +1,36 @@
+<div
+  class="container flex items-center w-full grid-cols-3 px-4 py-32 mx-auto justify-evenly"
+>
+  <div
+    *ngFor="let option of options"
+    [@inOutAnimation]
+    class="transition duration-200 transform text-9xl active:translate-y-2"
+  >
+    <a (click)="onOptionSelect(option)" class="cursor-pointer">{{ option }}</a>
+  </div>
+</div>
+<div
+  class="container flex items-center w-full grid-cols-3 px-4 mx-auto justify-evenly"
+>
+  <div *ngIf="usersOption != ''" [@inOutAnimation]>
+    <span class="flex flex-col items-center justify-center space-y-4">
+      <span class="text-2xl">You</span>
+      <span class="text-9xl">{{ usersOption }}</span>
+    </span>
+  </div>
+  <div *ngIf="computersOption != ''" [@inOutAnimation]>
+    <span class="flex flex-col items-center justify-center space-y-4">
+      <span class="text-2xl">Computer</span>
+      <span class="text-9xl">{{ computersOption }}</span>
+    </span>
+  </div>
+</div>
+<div
+  class="container flex items-center w-full grid-cols-3 px-4 mx-auto mt-20 justify-evenly"
+>
+  <div *ngIf="winner != ''" [@inOutAnimation]>
+    <span class="flex flex-col items-center justify-center space-y-4">
+      <span class="text-3xl font-semibold">{{ winner }}</span>
+    </span>
+  </div>
+</div>
