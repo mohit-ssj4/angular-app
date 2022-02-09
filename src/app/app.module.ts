@@ -15,7 +15,7 @@ import { RpsComponent } from './components/rps/rps.component';
   declarations: [AppComponent, HeaderComponent, ButtonComponent, RpsComponent],
   imports: [
     FormsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
